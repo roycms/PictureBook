@@ -5,8 +5,11 @@
 //  Created by roycms on 2016/12/20.
 //  Copyright © 2016年 杜耀辉. All rights reserved.
 //
-
+#import "RRGB.h"
 #import "AppDelegate.h"
+#import "IndexViewController.h"
+
+#import "PlayerViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +20,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] init];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [self defaultViewController];
+    [self.window makeKeyAndVisible];
+    
     return YES;
+}
+
+-(UINavigationController *)defaultViewController{
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[[PlayerViewController alloc]init]];
+    nav.navigationBar.translucent = YES;
+
+    return nav;
 }
 
 

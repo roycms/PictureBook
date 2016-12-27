@@ -1,0 +1,23 @@
+PODS:
+  - Masonry (1.0.2)
+  - Realm (2.1.2):
+    - Realm/Headers (= 2.1.2)
+  - Realm/Headers (2.1.2)
+  - RGB (0.0.2)
+  - StreamingKit (0.1.29)
+
+DEPENDENCIES:
+  - Masonry
+  - Realm
+  - RGB
+  - StreamingKit
+
+SPEC CHECKSUMS:
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
+  RGB: 21cf4b60ef3501c6b7cbb268a30045905dd90995
+  StreamingKit: c329785aaef3ac142d4ae388345bfe1ed23cfd45
+
+PODFILE CHECKSUM: 19b8e52c4fd345d85e760f689f17165562fae219
+
+COCOAPODS: 1.2.0.beta.1
