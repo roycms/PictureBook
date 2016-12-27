@@ -5,4 +5,5 @@ target ‘PictureBook’ do
     pod 'RGB'
     pod 'StreamingKit'
     pod 'Realm'
+    pod 'SDWebImage', '~> 3.7.2'
 end

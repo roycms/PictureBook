@@ -17,6 +17,7 @@
 		B03BEA111E10FA7700FD69AE /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03BEA0E1E10FA7700FD69AE /* SearchController.m */; };
 		B03BEA151E10FC3700FD69AE /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03BEA141E10FC3700FD69AE /* PlayerViewController.m */; };
 		B03BEA1B1E11283800FD69AE /* IndexModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B03BEA1A1E11283800FD69AE /* IndexModel.m */; };
+		B06CAFA81E123FF50032B0FF /* PlayerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B06CAFA71E123FF50032B0FF /* PlayerCollectionViewCell.m */; };
 		B0A0EF131E090BCA000CF659 /* PictureBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A0EF121E090BCA000CF659 /* PictureBookTests.m */; };
 		B0A0EF1E1E090BCA000CF659 /* PictureBookUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A0EF1D1E090BCA000CF659 /* PictureBookUITests.m */; };
 		F4AC44A75180D45504CB93AC /* libPods-PictureBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BEB07EF740962CA4519012E /* libPods-PictureBook.a */; };
@@ -57,6 +58,8 @@
 		B03BEA141E10FC3700FD69AE /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		B03BEA191E11283800FD69AE /* IndexModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexModel.h; sourceTree = "<group>"; };
 		B03BEA1A1E11283800FD69AE /* IndexModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexModel.m; sourceTree = "<group>"; };
+		B06CAFA61E123FF50032B0FF /* PlayerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerCollectionViewCell.h; sourceTree = "<group>"; };
+		B06CAFA71E123FF50032B0FF /* PlayerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerCollectionViewCell.m; sourceTree = "<group>"; };
 		B0A0EEF51E090BCA000CF659 /* PictureBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A0EF0E1E090BCA000CF659 /* PictureBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PictureBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A0EF121E090BCA000CF659 /* PictureBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureBookTests.m; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 			children = (
 				B03BEA131E10FC3700FD69AE /* PlayerViewController.h */,
 				B03BEA141E10FC3700FD69AE /* PlayerViewController.m */,
+				B06CAFA61E123FF50032B0FF /* PlayerCollectionViewCell.h */,
+				B06CAFA71E123FF50032B0FF /* PlayerCollectionViewCell.m */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B03BEA051E10FA6300FD69AE /* main.m in Sources */,
+				B06CAFA81E123FF50032B0FF /* PlayerCollectionViewCell.m in Sources */,
 				B03BEA0F1E10FA7700FD69AE /* IndexCollectionViewCell.m in Sources */,
 				B03BEA011E10FA6300FD69AE /* AppDelegate.m in Sources */,
 				B03BEA101E10FA7700FD69AE /* IndexViewController.m in Sources */,
