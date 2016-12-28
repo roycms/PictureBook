@@ -35,8 +35,13 @@
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
-    [self.ageButton removeFromSuperview];
-    [self.featureButton removeFromSuperview];
+    self.ageButton.hidden = YES;
+    self.featureButton.hidden = YES;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    self.ageButton.hidden = NO;
+    self.featureButton.hidden = NO;
 }
 
 -(void)prepareData{
@@ -60,9 +65,7 @@
     [self.view addSubview:self.collectionView];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(10,3, 0, 3));
-        
     }];
-
 }
 
 
@@ -78,7 +81,7 @@
     
     searchController.hidesNavigationBarDuringPresentation = YES;//是否隐藏导航栏
 
-    [self.navigationController.view addSubview:searchController.searchBar];
+    [self.navigationController.navigationBar addSubview:searchController.searchBar];
 
 }
 

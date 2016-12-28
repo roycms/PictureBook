@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "STKAudioPlayer.h"
-#import "Masonry.h"
+#import "Header.h"
 
-@interface PlayerViewController : UIViewController <STKAudioPlayerDelegate>
+@interface PlayerViewController : UIViewController
 
 @end

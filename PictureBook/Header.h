@@ -9,9 +9,13 @@
 #ifndef Header_h
 #define Header_h
 
+#import "AppDelegate.h"
 #import "Masonry.h"
 #import "RRGB.h"
 #import "NetworkManager.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "AudioPlayerManager.h"
+
+#define PLAYER ((AppDelegate *)[[UIApplication sharedApplication] delegate]).audioPlayer;
 
 #endif /* Header_h */

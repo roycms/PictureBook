@@ -21,6 +21,7 @@
 		B09BC1291E13758F00863CE7 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BC1281E13758F00863CE7 /* NetworkManager.m */; };
 		B09BC12C1E1375DB00863CE7 /* IndexNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BC12B1E1375DB00863CE7 /* IndexNetwork.m */; };
 		B09BC1301E1379E600863CE7 /* InitDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BC12F1E1379E600863CE7 /* InitDataBase.m */; };
+		B09BC1331E138BDC00863CE7 /* AudioPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BC1321E138BDC00863CE7 /* AudioPlayerManager.m */; };
 		B0A0EF131E090BCA000CF659 /* PictureBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A0EF121E090BCA000CF659 /* PictureBookTests.m */; };
 		B0A0EF1E1E090BCA000CF659 /* PictureBookUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A0EF1D1E090BCA000CF659 /* PictureBookUITests.m */; };
 		F4AC44A75180D45504CB93AC /* libPods-PictureBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BEB07EF740962CA4519012E /* libPods-PictureBook.a */; };
@@ -70,6 +71,8 @@
 		B09BC12D1E1378D600863CE7 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		B09BC12E1E1379E600863CE7 /* InitDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitDataBase.h; sourceTree = "<group>"; };
 		B09BC12F1E1379E600863CE7 /* InitDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitDataBase.m; sourceTree = "<group>"; };
+		B09BC1311E138BDC00863CE7 /* AudioPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayerManager.h; sourceTree = "<group>"; };
+		B09BC1321E138BDC00863CE7 /* AudioPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerManager.m; sourceTree = "<group>"; };
 		B0A0EEF51E090BCA000CF659 /* PictureBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A0EF0E1E090BCA000CF659 /* PictureBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PictureBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A0EF121E090BCA000CF659 /* PictureBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureBookTests.m; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 				B09BC1281E13758F00863CE7 /* NetworkManager.m */,
 				B09BC12E1E1379E600863CE7 /* InitDataBase.h */,
 				B09BC12F1E1379E600863CE7 /* InitDataBase.m */,
+				B09BC1311E138BDC00863CE7 /* AudioPlayerManager.h */,
+				B09BC1321E138BDC00863CE7 /* AudioPlayerManager.m */,
 			);
 			path = Mangger;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 				B06CAFA81E123FF50032B0FF /* PlayerCollectionViewCell.m in Sources */,
 				B03BEA0F1E10FA7700FD69AE /* IndexCollectionViewCell.m in Sources */,
 				B03BEA011E10FA6300FD69AE /* AppDelegate.m in Sources */,
+				B09BC1331E138BDC00863CE7 /* AudioPlayerManager.m in Sources */,
 				B03BEA101E10FA7700FD69AE /* IndexViewController.m in Sources */,
 				B09BC1301E1379E600863CE7 /* InitDataBase.m in Sources */,
 				B03BEA1B1E11283800FD69AE /* IndexModel.m in Sources */,
