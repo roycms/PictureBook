@@ -8,8 +8,8 @@
 #import "RRGB.h"
 #import "AppDelegate.h"
 #import "IndexViewController.h"
+#import "InitDataBase.h"
 
-#import "PlayerViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [InitDataBase initDataBase];//初始化数据库
     self.window = [[UIWindow alloc] init];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [self defaultViewController];
@@ -30,7 +31,7 @@
 }
 
 -(UINavigationController *)defaultViewController{
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[[PlayerViewController alloc]init]];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[[IndexViewController alloc]init]];
     nav.navigationBar.translucent = YES;
 
     return nav;

@@ -15,9 +15,9 @@
 }
 @end
 
-@implementation IndexResourceModel
-
-+(NSString *)primaryKey {
-    return @"id";
-}
-@end
+//@implementation IndexResourceModel
+//
+//+(NSString *)primaryKey {
+//    return @"id";
+//}
+//@end

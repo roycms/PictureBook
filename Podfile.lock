@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
+  - AFNetworking/NSURLSession (3.0.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
+    - AFNetworking/NSURLSession
   - Masonry (1.0.2)
   - Realm (2.1.2):
     - Realm/Headers (= 2.1.2)
@@ -10,6 +25,7 @@ PODS:
   - StreamingKit (0.1.29)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.0.4)
   - Masonry
   - Realm
   - RGB
@@ -17,12 +33,13 @@ DEPENDENCIES:
   - StreamingKit
 
 SPEC CHECKSUMS:
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
   RGB: 21cf4b60ef3501c6b7cbb268a30045905dd90995
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   StreamingKit: c329785aaef3ac142d4ae388345bfe1ed23cfd45
 
-PODFILE CHECKSUM: bffef6d09745f2324919fe7cfded5574bab9f561
+PODFILE CHECKSUM: 01300ac9440314ebbd1867e7120bd0d2a9d88399
 
 COCOAPODS: 1.2.0.beta.1

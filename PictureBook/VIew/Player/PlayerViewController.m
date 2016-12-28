@@ -20,6 +20,8 @@ static NSString * const cellName = @"PlayerCollectionViewCell";
 
 @property (nonatomic, strong) UIButton *playButton;
 
+@property (nonatomic, strong) UISlider *playSlider;
+
 typedef NSUInteger playType;
 @end
 
@@ -28,15 +30,9 @@ typedef NSUInteger playType;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-  
     [self setupUI];
-    
-
 }
-- (void)setupAudioPlayer {
 
-    [NSTimer scheduledTimerWithTimeInterval:0.3f target:self selector:@selector(updatedAudioPlayerData) userInfo:nil repeats:YES];
-}
 
 - (void)setupUI {
     
@@ -70,21 +66,41 @@ typedef NSUInteger playType;
     
     [self.playBar addSubview:self.playButton];
     [self.playButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.playBar);
+        make.centerY.equalTo(self.playBar);
+        make.right.equalTo(self.playBar).offset(-50);
+    }];
+    
+    [self.playBar addSubview:self.playSlider];
+    [self.playSlider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.playBar);
+        make.left.equalTo(self.playBar).offset(50);
+        make.right.equalTo(self.playButton.mas_left).offset(-20);;
     }];
 }
+- (void)sliderChange:(UISlider *)sender {
 
+     [self.audioPlayer seekToTime:sender.value*60];
+}
 -(void)playButtonAction:(UIButton*)sender{
     
    [self.audioPlayer play:@"http://picture-book.oss-cn-shanghai.aliyuncs.com/index/%E5%BD%93%E6%88%91%E5%94%B1%E8%B5%B7%E8%BF%99%E9%A6%96%E6%AD%8C.mp3"];
     
    [self.playButton setImage:[UIImage imageNamed:@"player_btn_pause_normal"] forState:UIControlStateNormal];
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.3f target:self selector:@selector(updatedAudioPlayerData) userInfo:nil repeats:YES];
 }
 
 -(void)updatedAudioPlayerData
 {
+    
+    self.playSlider.maximumValue = self.audioPlayer.duration/60;
+    
     NSLog(@"时长：%f",self.audioPlayer.duration);
     NSLog(@"进度：%f",self.audioPlayer.progress/60);
+    
+    self.playSlider.value = self.audioPlayer.progress/60;
+    
+    
 }
 
 -(STKAudioPlayer *)audioPlayer{
@@ -139,13 +155,26 @@ typedef NSUInteger playType;
     return _playButton;
 }
 
+-(UISlider *)playSlider{
+    if (!_playSlider) {
+        _playSlider =[[UISlider alloc]init];
+        _playSlider.minimumValue = 0.0;//下限
+        _playSlider.value = 0.0;//开始默认值
+//        _playSlider.minimumTrackTintColor = [UIColor hx_colorWithHexRGBAString:@"fddb43"];
+//        [_playSlider setThumbImage:[UIImage imageNamed:@"hd_ditu_juli_icon"] forState:UIControlStateNormal];
+        [_playSlider addTarget:self action:@selector(sliderChange:) forControlEvents:(UIControlEventValueChanged)];
+    }
+    
+    return _playSlider;
+}
+
 
 
 /// Raised when an item has started playing
 -(void) audioPlayer:(STKAudioPlayer*)audioPlayer didStartPlayingQueueItemId:(NSObject*)queueItemId {
     
     //跳到 120秒后播放
-    [self.audioPlayer seekToTime:120];
+//    [self.audioPlayer seekToTime:120];
 }
 
 /// Raised when an item has finished buffering (may or may not be the currently playing item)

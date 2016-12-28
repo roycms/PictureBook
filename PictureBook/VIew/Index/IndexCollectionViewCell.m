@@ -9,6 +9,7 @@
 #import "IndexCollectionViewCell.h"
 
 @interface IndexCollectionViewCell()
+
 @property (nonatomic, strong)UIImageView *imageView;
 @property (nonatomic, strong)UILabel *titleLabel;
 
@@ -22,6 +23,13 @@
     return self;
 }
 
+-(void)setModel:(IndexModel *)model{
+
+    _model =model;
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:model.IMAGE_SRC] placeholderImage:[UIImage imageNamed:@"null"]];
+    
+    self.titleLabel.text = model.TITLE;
+}
 - (void)setupUI {
     
     [self.contentView addSubview:self.imageView];

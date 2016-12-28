@@ -10,15 +10,18 @@
 
 #import "SearchController.h"
 #import "IndexCollectionViewCell.h"
+#import "IndexNetwork.h"
+#import "PlayerViewController.h"
 
 @interface IndexViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic,strong) UIButton *ageButton; //年龄段分类
 @property (nonatomic,strong) UIButton *featureButton; //特色分类
 
-@property (nonatomic,strong) NSMutableArray *bgData;
 @property (nonatomic, strong)UICollectionView *collectionView;
 @property (nonatomic, strong)UICollectionViewFlowLayout *flowLayout;
+
+@property RLMResults * dataList;
 
 @end
 
@@ -26,8 +29,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    self.dataList = [IndexModel allObjects];
     [self prepareUI];
+    [self prepareData];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [self.ageButton removeFromSuperview];
+    [self.featureButton removeFromSuperview];
+}
+
+-(void)prepareData{
+    [[IndexNetwork shareManager] loadBook:^(NSDictionary *data, NSError * error) {
+        if (error) {
+            return ;
+        }
+        [self.collectionView reloadData];
+    }];
 }
 
 -(void)prepareUI{
@@ -70,13 +88,13 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.bgData.count;
+    return self.dataList.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     IndexCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"IndexCollectionViewCell" forIndexPath:indexPath];
-    
+    cell.model = self.dataList[indexPath.row];
     return cell;
 }
 
@@ -87,8 +105,9 @@
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    [self.collectionView reloadData];
+    PlayerViewController *vc =[[PlayerViewController alloc]init];
     
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 //懒加载
@@ -103,12 +122,22 @@
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.showsVerticalScrollIndicator = NO;
         [_collectionView registerClass:[IndexCollectionViewCell class] forCellWithReuseIdentifier:@"IndexCollectionViewCell"];
+        
+        [_collectionView setBackgroundColor:[UIColor whiteColor]];
     }
     return _collectionView;
 }
 
 - (UICollectionViewFlowLayout *)flowLayout {
-    int size =([UIScreen mainScreen].bounds.size.width-6)/2;
+    
+    int size;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        size =([UIScreen mainScreen].bounds.size.width-6)/4;
+    }
+    else{
+        size =([UIScreen mainScreen].bounds.size.width-6)/2;
+    }
+   
     if (_flowLayout == nil) {
         _flowLayout = [[UICollectionViewFlowLayout alloc] init];
         _flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;

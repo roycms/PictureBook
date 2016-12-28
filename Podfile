@@ -6,4 +6,5 @@ target ‘PictureBook’ do
     pod 'StreamingKit'
     pod 'Realm'
     pod 'SDWebImage', '~> 3.7.2'
+    pod 'AFNetworking', '~> 3.0.4'
 end
