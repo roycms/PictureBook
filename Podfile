@@ -7,4 +7,5 @@ target ‘PictureBook’ do
     pod 'Realm'
     pod 'SDWebImage', '~> 3.7.2'
     pod 'AFNetworking', '~> 3.0.4'
+    pod 'RAlertView'
 end

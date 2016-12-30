@@ -8,6 +8,8 @@
 
 #import "PlayerViewController.h"
 #import "PlayerCollectionViewCell.h"
+#import "PlaylistView.h"
+#import "IndexModel.h"
 
 static NSString * const cellName = @"PlayerCollectionViewCell";
 @interface PlayerViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
@@ -30,6 +32,8 @@ typedef NSUInteger playType;
     [super viewDidLoad];
 
     [self setupUI];
+    
+    [self playButtonAction:nil];
 }
 
 
@@ -75,6 +79,15 @@ typedef NSUInteger playType;
         make.left.equalTo(self.playBar).offset(50);
         make.right.equalTo(self.playButton.mas_left).offset(-20);;
     }];
+    
+    
+    PlaylistView *playlistView =[[PlaylistView alloc]init];
+    [self.view addSubview:playlistView];
+    [playlistView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    playlistView.dataList = [IndexModel allObjects];
+   
 }
 - (void)sliderChange:(UISlider *)sender {
     

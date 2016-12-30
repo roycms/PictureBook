@@ -17,11 +17,14 @@
 
 @property (nonatomic,strong) UIButton *ageButton; //年龄段分类
 @property (nonatomic,strong) UIButton *featureButton; //特色分类
+@property (nonatomic,strong) UIButton *waveButton;
 
 @property (nonatomic, strong)UICollectionView *collectionView;
 @property (nonatomic, strong)UICollectionViewFlowLayout *flowLayout;
-
+@property SearchController *searchController ;
 @property RLMResults * dataList;
+
+@property  dispatch_source_t timer;
 
 @end
 
@@ -30,13 +33,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dataList = [IndexModel allObjects];
+    
     [self prepareUI];
     [self prepareData];
+    
+    [self.collectionView reloadData];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     self.ageButton.hidden = YES;
     self.featureButton.hidden = YES;
+    self.searchController.searchBar.hidden = YES;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -50,12 +57,35 @@
             return ;
         }
         [self.collectionView reloadData];
+        
+        IndexModel *model =[IndexModel allObjects].lastObject;
+        
+        
+        SDWebImageDownloader *downloader = [SDWebImageDownloader sharedDownloader];
+        [downloader downloadImageWithURL:[NSURL URLWithString:model.IMAGE_SRC]
+                                 options:0
+                                progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                    // progression tracking code
+                                }
+                               completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+                                   if (image && finished) {
+                                       // do something with image
+                                       [self.waveButton setImage:image forState:UIControlStateNormal];
+                                   }
+                               }];
+
+        
     }];
 }
 
 -(void)prepareUI{
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"搜搜" style:UIBarButtonItemStylePlain target:self action:@selector(leftAction:)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"搜搜" style:UIBarButtonItemStylePlain target:self action:@selector(leftAction:)];
+    
+    
+    [self.navigationController.navigationBar addSubview:self.waveButton];
+    
+    self.waveButton.frame = CGRectMake(self.view.frame.size.width - 50,0, 40, 40);
 
     [self.navigationController.navigationBar addSubview:self.ageButton];
     [self.navigationController.navigationBar addSubview:self.featureButton];
@@ -73,15 +103,16 @@
 
     self.definesPresentationContext = YES;
     
-    SearchController *searchController =[[SearchController alloc]initWithSearchResultsController:self];
+    self.searchController =[[SearchController alloc]initWithSearchResultsController:self];
 
-    searchController.searchBar.backgroundColor = [UIColor redColor];
+    self.searchController.searchBar.backgroundColor = [UIColor whiteColor];
 
-    searchController.dimsBackgroundDuringPresentation = NO;//是否添加半透明覆盖层
+//  self.searchController.dimsBackgroundDuringPresentation = NO;//是否添加半透明覆盖层
     
-    searchController.hidesNavigationBarDuringPresentation = YES;//是否隐藏导航栏
+    self.searchController.hidesNavigationBarDuringPresentation = YES;//是否隐藏导航栏
+    self.searchController.searchBar.showsCancelButton = YES;
 
-    [self.navigationController.navigationBar addSubview:searchController.searchBar];
+    [self.navigationController.navigationBar addSubview:self.searchController.searchBar];
 
 }
 
@@ -112,6 +143,36 @@
     
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+
+- (UIButton *)waveButton{
+    
+    if (!_waveButton) {
+        _waveButton = [[UIButton alloc]init];
+        _waveButton.layer.masksToBounds = YES;
+        _waveButton.layer.cornerRadius = 20.0;
+
+        CABasicAnimation *animation =  [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+        animation.fromValue = [NSNumber numberWithFloat:0.f];
+        animation.toValue =  [NSNumber numberWithFloat: M_PI *2];
+        animation.duration  = 5;
+        animation.autoreverses = NO;
+        animation.fillMode =kCAFillModeForwards;
+        animation.repeatCount = 500;
+        [_waveButton.layer addAnimation:animation forKey:nil];
+        
+        UIView *radiusView =[[UIView alloc]initWithFrame:CGRectMake(15, 15, 10, 10)];
+        radiusView.backgroundColor = [UIColor whiteColor];
+        radiusView.layer.masksToBounds = YES;
+        radiusView.layer.cornerRadius = 5;
+        [_waveButton addSubview:radiusView];
+        
+    }
+
+    return _waveButton;
+}
+
+
 
 //懒加载
 - (UICollectionView *)collectionView {

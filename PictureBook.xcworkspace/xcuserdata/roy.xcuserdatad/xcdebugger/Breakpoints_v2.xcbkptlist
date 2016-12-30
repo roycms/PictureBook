@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PictureBook/VIew/Index/IndexNetwork.m"
-            timestampString = "504594046.709517"
+            filePath = "PictureBook/VIew/Playlist/PlaylistView.m"
+            timestampString = "504768806.517777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "-loadBook:"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-setDataList:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

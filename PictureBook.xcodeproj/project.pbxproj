@@ -18,6 +18,7 @@
 		B03BEA151E10FC3700FD69AE /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03BEA141E10FC3700FD69AE /* PlayerViewController.m */; };
 		B03BEA1B1E11283800FD69AE /* IndexModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B03BEA1A1E11283800FD69AE /* IndexModel.m */; };
 		B06CAFA81E123FF50032B0FF /* PlayerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B06CAFA71E123FF50032B0FF /* PlayerCollectionViewCell.m */; };
+		B07F85401E15F5CE00DA84C8 /* PlaylistView.m in Sources */ = {isa = PBXBuildFile; fileRef = B07F853F1E15F5CE00DA84C8 /* PlaylistView.m */; };
 		B09BC1291E13758F00863CE7 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BC1281E13758F00863CE7 /* NetworkManager.m */; };
 		B09BC12C1E1375DB00863CE7 /* IndexNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BC12B1E1375DB00863CE7 /* IndexNetwork.m */; };
 		B09BC1301E1379E600863CE7 /* InitDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BC12F1E1379E600863CE7 /* InitDataBase.m */; };
@@ -64,6 +65,8 @@
 		B03BEA1A1E11283800FD69AE /* IndexModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexModel.m; sourceTree = "<group>"; };
 		B06CAFA61E123FF50032B0FF /* PlayerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerCollectionViewCell.h; sourceTree = "<group>"; };
 		B06CAFA71E123FF50032B0FF /* PlayerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerCollectionViewCell.m; sourceTree = "<group>"; };
+		B07F853E1E15F5CE00DA84C8 /* PlaylistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistView.h; sourceTree = "<group>"; };
+		B07F853F1E15F5CE00DA84C8 /* PlaylistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistView.m; sourceTree = "<group>"; };
 		B09BC1271E13758F00863CE7 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		B09BC1281E13758F00863CE7 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		B09BC12A1E1375DB00863CE7 /* IndexNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexNetwork.h; sourceTree = "<group>"; };
@@ -148,6 +151,7 @@
 			children = (
 				B03BEA071E10FA7700FD69AE /* Index */,
 				B03BEA121E10FAFA00FD69AE /* Player */,
+				B07F853D1E15F5B500DA84C8 /* Playlist */,
 				B03BEA0C1E10FA7700FD69AE /* Search */,
 			);
 			path = VIew;
@@ -194,6 +198,15 @@
 				B03BEA1A1E11283800FD69AE /* IndexModel.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		B07F853D1E15F5B500DA84C8 /* Playlist */ = {
+			isa = PBXGroup;
+			children = (
+				B07F853E1E15F5CE00DA84C8 /* PlaylistView.h */,
+				B07F853F1E15F5CE00DA84C8 /* PlaylistView.m */,
+			);
+			path = Playlist;
 			sourceTree = "<group>";
 		};
 		B09BC1251E13758F00863CE7 /* Tools */ = {
@@ -449,6 +462,7 @@
 				B06CAFA81E123FF50032B0FF /* PlayerCollectionViewCell.m in Sources */,
 				B03BEA0F1E10FA7700FD69AE /* IndexCollectionViewCell.m in Sources */,
 				B03BEA011E10FA6300FD69AE /* AppDelegate.m in Sources */,
+				B07F85401E15F5CE00DA84C8 /* PlaylistView.m in Sources */,
 				B09BC1331E138BDC00863CE7 /* AudioPlayerManager.m in Sources */,
 				B03BEA101E10FA7700FD69AE /* IndexViewController.m in Sources */,
 				B09BC1301E1379E600863CE7 /* InitDataBase.m in Sources */,
