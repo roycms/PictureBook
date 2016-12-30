@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
   - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
   - RAlertView (0.1.1):
     - Masonry
     - RGB
@@ -30,6 +31,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.0.4)
   - Masonry
+  - MBProgressHUD
   - RAlertView
   - Realm
   - RGB
@@ -39,12 +41,13 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   RAlertView: b9996eb63ceb64c7d1879a1d1846af5e386a1808
   Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
   RGB: 21cf4b60ef3501c6b7cbb268a30045905dd90995
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   StreamingKit: c329785aaef3ac142d4ae388345bfe1ed23cfd45
 
-PODFILE CHECKSUM: d5bfa61bef89f0dcc26fcf25f6ef88ade7751e32
+PODFILE CHECKSUM: 1e10e315290e17f94ee12488a08df91723919472
 
 COCOAPODS: 1.2.0.beta.1

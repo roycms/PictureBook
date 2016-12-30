@@ -20,6 +20,7 @@ static NSString * const cellName = @"PlayerCollectionViewCell";
 @property (nonatomic, strong) UIView *playBar;
 
 @property (nonatomic, strong) UIButton *playButton;
+@property (nonatomic, strong) UIButton *playListButton;
 
 @property (nonatomic, strong) UISlider *playSlider;
 
@@ -60,12 +61,20 @@ typedef NSUInteger playType;
     self.pageCount = 13;
     
     
+
     [self.view addSubview:self.playBar];
     
     [self.playBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
         make.height.offset(80);
     }];
+    
+    [self.playBar addSubview:self.playListButton];
+    [self.playListButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.playBar);
+        make.left.equalTo(self.playBar).offset(50);
+    }];
+    
     
     [self.playBar addSubview:self.playButton];
     [self.playButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -76,18 +85,10 @@ typedef NSUInteger playType;
     [self.playBar addSubview:self.playSlider];
     [self.playSlider mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.playBar);
-        make.left.equalTo(self.playBar).offset(50);
+        make.left.equalTo(self.playListButton.mas_right).offset(20);
         make.right.equalTo(self.playButton.mas_left).offset(-20);;
     }];
-    
-    
-    PlaylistView *playlistView =[[PlaylistView alloc]init];
-    [self.view addSubview:playlistView];
-    [playlistView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
-    playlistView.dataList = [IndexModel allObjects];
-   
+ 
 }
 - (void)sliderChange:(UISlider *)sender {
     
@@ -100,6 +101,15 @@ typedef NSUInteger playType;
    [self.playButton setImage:[UIImage imageNamed:@"player_btn_pause_normal"] forState:UIControlStateNormal];
     
     [NSTimer scheduledTimerWithTimeInterval:0.3f target:self selector:@selector(updatedAudioPlayerData) userInfo:nil repeats:YES];
+}
+
+-(void)playListButtonAction:(UIButton*)sender{
+    PlaylistView *playlistView =[[PlaylistView alloc]init];
+    [self.view addSubview:playlistView];
+    [playlistView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    playlistView.dataList = [IndexModel allObjects];
 }
 
 -(void)updatedAudioPlayerData
@@ -145,6 +155,16 @@ typedef NSUInteger playType;
         _playBar.alpha = 0.6;
     }
     return _playBar;
+}
+
+-(UIButton *)playListButton{
+    if (!_playListButton) {
+        _playListButton = [[UIButton alloc]init];
+        
+        [_playListButton addTarget:self action:@selector(playListButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_playListButton setImage:[UIImage imageNamed:@"player_btn_play_normal"] forState:UIControlStateNormal];
+    }
+    return _playListButton;
 }
 
 -(UIButton *)playButton{

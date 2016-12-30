@@ -160,13 +160,9 @@
 		B03BEA071E10FA7700FD69AE /* Index */ = {
 			isa = PBXGroup;
 			children = (
+				B07F85421E1646F300DA84C8 /* view */,
+				B07F85411E1646CF00DA84C8 /* Network */,
 				B03BEA181E11281F00FD69AE /* Model */,
-				B03BEA0A1E10FA7700FD69AE /* IndexViewController.h */,
-				B03BEA0B1E10FA7700FD69AE /* IndexViewController.m */,
-				B03BEA081E10FA7700FD69AE /* IndexCollectionViewCell.h */,
-				B03BEA091E10FA7700FD69AE /* IndexCollectionViewCell.m */,
-				B09BC12A1E1375DB00863CE7 /* IndexNetwork.h */,
-				B09BC12B1E1375DB00863CE7 /* IndexNetwork.m */,
 			);
 			path = Index;
 			sourceTree = "<group>";
@@ -207,6 +203,26 @@
 				B07F853F1E15F5CE00DA84C8 /* PlaylistView.m */,
 			);
 			path = Playlist;
+			sourceTree = "<group>";
+		};
+		B07F85411E1646CF00DA84C8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B09BC12A1E1375DB00863CE7 /* IndexNetwork.h */,
+				B09BC12B1E1375DB00863CE7 /* IndexNetwork.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		B07F85421E1646F300DA84C8 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				B03BEA0A1E10FA7700FD69AE /* IndexViewController.h */,
+				B03BEA0B1E10FA7700FD69AE /* IndexViewController.m */,
+				B03BEA081E10FA7700FD69AE /* IndexCollectionViewCell.h */,
+				B03BEA091E10FA7700FD69AE /* IndexCollectionViewCell.m */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 		B09BC1251E13758F00863CE7 /* Tools */ = {
