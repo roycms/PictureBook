@@ -12,6 +12,7 @@
 #import "IndexCollectionViewCell.h"
 #import "IndexNetwork.h"
 #import "PlayerViewController.h"
+#import "InitAlertView.h"
 
 @interface IndexViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -21,6 +22,7 @@
 
 @property (nonatomic, strong)UICollectionView *collectionView;
 @property (nonatomic, strong)UICollectionViewFlowLayout *flowLayout;
+@property (nonatomic, strong)UITableView *tableView;
 @property SearchController *searchController ;
 @property RLMResults * dataList;
 
@@ -38,7 +40,23 @@
     [self prepareData];
     
     [self.collectionView reloadData];
+    
+    InitAlertView *alert = [[InitAlertView alloc] initWithStyle:CancelAndConfirmAlert];
+    
+    alert.pickerDataSource = @[@"1岁了",@"2岁了",@"3岁了",@"4岁了",@"5岁了",@"6岁以上了"];
+    alert.headerTitleLabel.text = @"宝宝几岁了？";
+    [alert.confirmButton setTitle:@"确认" forState:UIControlStateNormal];
+    [alert.cancelButton setTitle:@"跳过" forState:UIControlStateNormal];
+    alert.theme =[UIColor redColor];
+    alert.confirm = ^(){
+        NSLog(@"Click on the Ok");
+    };
+    alert.cancel = ^(){
+        NSLog(@"Click on the Cancel");
+    };
+
 }
+
 
 -(void)viewWillDisappear:(BOOL)animated{
     self.ageButton.hidden = YES;
@@ -94,7 +112,7 @@
     
     [self.view addSubview:self.collectionView];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(10,3, 0, 3));
+        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(10,10, 0, 10));
     }];
 }
 
@@ -196,10 +214,10 @@
     
     int size;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        size =([UIScreen mainScreen].bounds.size.width-6)/4;
+        size =([UIScreen mainScreen].bounds.size.width-38)/6;
     }
     else{
-        size =([UIScreen mainScreen].bounds.size.width-6)/2;
+        size =([UIScreen mainScreen].bounds.size.width-38)/3;
     }
    
     if (_flowLayout == nil) {
