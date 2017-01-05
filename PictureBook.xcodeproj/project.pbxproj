@@ -10,7 +10,6 @@
 		B03BEA011E10FA6300FD69AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9FB1E10FA6300FD69AE /* AppDelegate.m */; };
 		B03BEA021E10FA6300FD69AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03BE9FC1E10FA6300FD69AE /* Assets.xcassets */; };
 		B03BEA031E10FA6300FD69AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03BE9FD1E10FA6300FD69AE /* LaunchScreen.storyboard */; };
-		B03BEA041E10FA6300FD69AE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B03BE9FF1E10FA6300FD69AE /* Info.plist */; };
 		B03BEA051E10FA6300FD69AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B03BEA001E10FA6300FD69AE /* main.m */; };
 		B03BEA0F1E10FA7700FD69AE /* IndexCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B03BEA091E10FA7700FD69AE /* IndexCollectionViewCell.m */; };
 		B03BEA101E10FA7700FD69AE /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03BEA0B1E10FA7700FD69AE /* IndexViewController.m */; };
@@ -426,7 +425,6 @@
 			files = (
 				B03BEA021E10FA6300FD69AE /* Assets.xcassets in Resources */,
 				B03BEA031E10FA6300FD69AE /* LaunchScreen.storyboard in Resources */,
-				B03BEA041E10FA6300FD69AE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +576,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -626,6 +625,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
