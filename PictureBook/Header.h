@@ -18,6 +18,10 @@
 #import "RAlertView.h"
 #import <Realm/Realm.h>
 #import "MBProgressHUD.h"
+#import "DataBaseManager.h"
+
+
+
 
 #define PLAYER ((AppDelegate *)[[UIApplication sharedApplication] delegate]).audioPlayer;
 

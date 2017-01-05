@@ -22,10 +22,11 @@
 		B07F85471E16537D00DA84C8 /* InitAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B07F85461E16537D00DA84C8 /* InitAlertView.m */; };
 		B09BC1291E13758F00863CE7 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BC1281E13758F00863CE7 /* NetworkManager.m */; };
 		B09BC12C1E1375DB00863CE7 /* IndexNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BC12B1E1375DB00863CE7 /* IndexNetwork.m */; };
-		B09BC1301E1379E600863CE7 /* InitDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BC12F1E1379E600863CE7 /* InitDataBase.m */; };
+		B09BC1301E1379E600863CE7 /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BC12F1E1379E600863CE7 /* DataBaseManager.m */; };
 		B09BC1331E138BDC00863CE7 /* AudioPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BC1321E138BDC00863CE7 /* AudioPlayerManager.m */; };
 		B0A0EF131E090BCA000CF659 /* PictureBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A0EF121E090BCA000CF659 /* PictureBookTests.m */; };
 		B0A0EF1E1E090BCA000CF659 /* PictureBookUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A0EF1D1E090BCA000CF659 /* PictureBookUITests.m */; };
+		B0F0EE1B1E1B336600449D7B /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0EE1A1E1B336600449D7B /* UserModel.m */; };
 		F4AC44A75180D45504CB93AC /* libPods-PictureBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BEB07EF740962CA4519012E /* libPods-PictureBook.a */; };
 /* End PBXBuildFile section */
 
@@ -75,8 +76,8 @@
 		B09BC12A1E1375DB00863CE7 /* IndexNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexNetwork.h; sourceTree = "<group>"; };
 		B09BC12B1E1375DB00863CE7 /* IndexNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexNetwork.m; sourceTree = "<group>"; };
 		B09BC12D1E1378D600863CE7 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
-		B09BC12E1E1379E600863CE7 /* InitDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitDataBase.h; sourceTree = "<group>"; };
-		B09BC12F1E1379E600863CE7 /* InitDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitDataBase.m; sourceTree = "<group>"; };
+		B09BC12E1E1379E600863CE7 /* DataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseManager.h; sourceTree = "<group>"; };
+		B09BC12F1E1379E600863CE7 /* DataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
 		B09BC1311E138BDC00863CE7 /* AudioPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayerManager.h; sourceTree = "<group>"; };
 		B09BC1321E138BDC00863CE7 /* AudioPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerManager.m; sourceTree = "<group>"; };
 		B0A0EEF51E090BCA000CF659 /* PictureBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +87,8 @@
 		B0A0EF191E090BCA000CF659 /* PictureBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PictureBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A0EF1D1E090BCA000CF659 /* PictureBookUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureBookUITests.m; sourceTree = "<group>"; };
 		B0A0EF1F1E090BCA000CF659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0F0EE191E1B336600449D7B /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		B0F0EE1A1E1B336600449D7B /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		E7E3E18641E3FC9A97C887A2 /* Pods-PictureBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictureBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-PictureBook/Pods-PictureBook.release.xcconfig"; sourceTree = "<group>"; };
 		F4137A31F44FCB67A38E558C /* Pods-PictureBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictureBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictureBook/Pods-PictureBook.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,8 +155,9 @@
 		B03BEA061E10FA7700FD69AE /* VIew */ = {
 			isa = PBXGroup;
 			children = (
-				B07F85441E16535400DA84C8 /* InitAlert */,
+				B0F0EE181E1B335300449D7B /* UserModel */,
 				B03BEA071E10FA7700FD69AE /* Index */,
+				B07F85441E16535400DA84C8 /* InitAlert */,
 				B03BEA121E10FAFA00FD69AE /* Player */,
 				B07F853D1E15F5B500DA84C8 /* Playlist */,
 				B03BEA0C1E10FA7700FD69AE /* Search */,
@@ -251,8 +255,8 @@
 			children = (
 				B09BC1271E13758F00863CE7 /* NetworkManager.h */,
 				B09BC1281E13758F00863CE7 /* NetworkManager.m */,
-				B09BC12E1E1379E600863CE7 /* InitDataBase.h */,
-				B09BC12F1E1379E600863CE7 /* InitDataBase.m */,
+				B09BC12E1E1379E600863CE7 /* DataBaseManager.h */,
+				B09BC12F1E1379E600863CE7 /* DataBaseManager.m */,
 				B09BC1311E138BDC00863CE7 /* AudioPlayerManager.h */,
 				B09BC1321E138BDC00863CE7 /* AudioPlayerManager.m */,
 			);
@@ -297,6 +301,15 @@
 				B0A0EF1F1E090BCA000CF659 /* Info.plist */,
 			);
 			path = PictureBookUITests;
+			sourceTree = "<group>";
+		};
+		B0F0EE181E1B335300449D7B /* UserModel */ = {
+			isa = PBXGroup;
+			children = (
+				B0F0EE191E1B336600449D7B /* UserModel.h */,
+				B0F0EE1A1E1B336600449D7B /* UserModel.m */,
+			);
+			path = UserModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,9 +507,10 @@
 				B07F85401E15F5CE00DA84C8 /* PlaylistView.m in Sources */,
 				B09BC1331E138BDC00863CE7 /* AudioPlayerManager.m in Sources */,
 				B03BEA101E10FA7700FD69AE /* IndexViewController.m in Sources */,
-				B09BC1301E1379E600863CE7 /* InitDataBase.m in Sources */,
+				B09BC1301E1379E600863CE7 /* DataBaseManager.m in Sources */,
 				B03BEA1B1E11283800FD69AE /* IndexModel.m in Sources */,
 				B03BEA111E10FA7700FD69AE /* SearchController.m in Sources */,
+				B0F0EE1B1E1B336600449D7B /* UserModel.m in Sources */,
 				B07F85471E16537D00DA84C8 /* InitAlertView.m in Sources */,
 				B09BC1291E13758F00863CE7 /* NetworkManager.m in Sources */,
 				B03BEA151E10FC3700FD69AE /* PlayerViewController.m in Sources */,

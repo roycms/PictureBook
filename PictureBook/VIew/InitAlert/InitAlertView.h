@@ -10,4 +10,5 @@
 
 @interface InitAlertView : RAlertView
 @property (nonatomic ,strong)NSArray *pickerDataSource;
+
 @end

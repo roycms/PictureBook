@@ -34,8 +34,10 @@
 -(void)setPickerDataSource:(NSArray *)pickerDataSource{
 
     _pickerDataSource = pickerDataSource;
-    [self contentViewUI];
-
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self contentViewUI];
+    });
 }
 
 #pragma mark UIPickerView DataSource Method 数据源方法
@@ -52,6 +54,9 @@
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     return self.pickerDataSource[row];
+}
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+
 }
 
 

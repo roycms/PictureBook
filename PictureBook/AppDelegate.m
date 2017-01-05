@@ -8,7 +8,6 @@
 #import "RRGB.h"
 #import "AppDelegate.h"
 #import "IndexViewController.h"
-#import "InitDataBase.h"
 
 
 @interface AppDelegate ()
@@ -21,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [InitDataBase initDataBase];//初始化数据库
+    [DataBaseManager initDataBase];//初始化数据库
     self.window = [[UIWindow alloc] init];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [self defaultViewController];

@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <Realm/Realm.h>
-@interface InitDataBase : NSObject
+@interface DataBaseManager : NSObject
 +(void)initDataBase;
++(void)addData:(RLMObject *)rlmObject;
++(void)addDataWithArray:(NSArray *)rlmObjects modelClass:(Class)modelClass;
++(void)removeData:(RLMObject *)rlmObject;
 @end

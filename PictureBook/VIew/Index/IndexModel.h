@@ -18,10 +18,10 @@
 //RLM_ARRAY_TYPE(IndexResourceModel)
 
 @interface IndexModel : RLMObject
-@property int id;
-@property NSString *TITLE;
-@property NSString *IMAGE_SRC;
-@property NSString *AUDIO_SRC;
+@property int id; //编号
+@property NSString *TITLE; // 绘本标题
+@property NSString *IMAGE_SRC; //绘本封面地址
+@property NSString *AUDIO_SRC; //绘本声音地址
 //@property RLMArray<IndexResourceModel> *resources;
 @end
 

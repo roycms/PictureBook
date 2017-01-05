@@ -13,7 +13,7 @@
 #import "IndexNetwork.h"
 #import "PlayerViewController.h"
 #import "InitAlertView.h"
-
+#import "UserModel.h"
 @interface IndexViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic,strong) UIButton *ageButton; //年龄段分类
@@ -47,9 +47,14 @@
     alert.headerTitleLabel.text = @"宝宝几岁了？";
     [alert.confirmButton setTitle:@"确认" forState:UIControlStateNormal];
     [alert.cancelButton setTitle:@"跳过" forState:UIControlStateNormal];
-    alert.theme =[UIColor redColor];
+    alert.theme = [UIColor redColor];
     alert.confirm = ^(){
         NSLog(@"Click on the Ok");
+        UserModel *userModel = [[UserModel alloc]init];
+        userModel.phone = @"未设置";
+        userModel.userName =@"";
+        userModel.BABY_AGE = 6;
+        [DataBaseManager addData:userModel];
     };
     alert.cancel = ^(){
         NSLog(@"Click on the Cancel");
